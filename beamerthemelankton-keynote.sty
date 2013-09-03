@@ -1,7 +1,7 @@
 \renewcommand\sfdefault{phv}
 \renewcommand\familydefault{\sfdefault}
 \usetheme{default}
-\usepackage{color}
+\useinnertheme{defaut}
 \useoutertheme{default}
 \usepackage{texnansi}
 \usepackage{marvosym}
@@ -16,3 +16,22 @@
 \setbeamertemplate{items}[circle]
 \setbeamerfont{frametitle}{size=\huge}
 \setbeamertemplate{navigation symbols}{} %no nav symbols
+%=====
+% from the comments on the source website:
+% http://www.shawnlankton.com/2008/02/beamer-and-latex-with-keynote-theme/
+%=====
+% Great template, really like this theme a lot! I did find out how to change 
+% some of the things that others above had asked about:
+% Getting the block environment to work is simply a matter of changing the 
+% colors by adding the following to the style file:
+\setbeamercolor{block title}{parent=normal text, bg=gray}
+\setbeamercolor{block body}{parent=normal text, use=block title,bg=block title.bg!10!black}
+% In this example, the parent causes the text to look like the normal text 
+% (e.g. white in this theme) and a gray background for the block title, where 
+% the block body is mixed with the block title background (10%) and black(90%).
+% Note that the parent doesn’t have to be used, it just inherits from the 
+% parent, can also set fg and bg explicitly.
+% As for changing the coloring of the table of contents, I used the following 
+% in the style file to make the main sections a bit lighter & stand out more:
+\setbeamercolor{section in toc}{use=structure,parent=structure,fg=structure.fg!50}
+%=====
